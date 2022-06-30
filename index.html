@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizblock</title>
+    <link rel="stylesheet" href="fonts.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon-pencil.png">
+</head>
+
+<body onload="renderSavedNotes()">
+    <header>
+        <img onclick="showNavMenu()" class="header-menu-img" src="img/menu.png" alt="Menü">
+        <img class="header-icon" src="img/pencil-header.png" alt="">
+        <h1>Notizen</h1>
+    </header>
+    <div class="align-nav-main">
+        <nav class="nav-solid">
+            <a class="bg-main-nav" href="index.html"><img class="nav-img" src="img/pencil-black.png" alt="Stift"><span class="nav-text">Notizen</span></a>
+            <a class="bg-secondary-nav" href="trash.html"><img class="nav-img" src="img/trash-grey.png" alt="Mülleimer"><span class="nav-text">Papierkorb</span></a>
+        </nav>
+        <nav id="nav-scroll-menu" class="nav-scroll-menu hide-nav-scroll-menu">
+            <img onclick="hideNavMenu()" class="scroll-menu-button" src="img/menu.png" alt="Menü">
+            <a class="bg-main-nav" href="index.html"><img class="nav-img" src="img/pencil-black.png" alt="Stift"><span>Notizen</span></a>
+            <a class="bg-secondary-nav" href="trash.html"><img class="nav-img" src="img/trash-grey.png" alt="Mülleimer"><span>Papierkorb</span></a>
+        </nav>
+        <main>
+            <div class="write-note-section">
+                <div class="write-note-box">
+                    <div contenteditable="true" id="note-title" class="note-title" data-placeholder="Titel"></div>
+                    <div contenteditable="true" id="note-text" class="note-text" data-placeholder="Notiz schreiben..."></div>
+                    <div class="save-button-section">
+                        <button onclick="saveNewNote()" class="save-button">Speichern</button>
+                    </div>
+                </div>
+            </div>
+            <div class="saved-notes-section">
+                <h2 class="d-none" id="pinned-headline">ANGEPINNT</h2>
+                <div id="saved-notes" class="saved-notes">
+                </div>
+                <div id="bg-no-note" class="bg-no-note">
+                    <img src="img/light-bulb.png" alt="Glühbirne">
+                    <span>Hier werden gespeicherte Notizen angezeigt</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

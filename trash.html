@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papierkorb</title>
+    <link rel="stylesheet" href="fonts.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon-trash.png">
+</head>
+
+<body onload="renderDeletedNotes()">
+    <header>
+        <img onclick="showNavMenu()" class="header-menu-img" src="img/menu.png" alt="Menü">
+        <img class="header-icon" src="img/trash-header.png" alt="">
+        <h1>Papierkorb</h1>
+    </header>
+    <div class="align-nav-main">
+        <nav class="nav-solid">
+            <a class="bg-secondary-nav" href="index.html"><img class="nav-img" src="img/pencil-grey.png"
+                    alt="Stift"><span class="nav-text">Notizen</span></a>
+            <a class="bg-main-nav" href="trash.html"><img class="nav-img" src="img/trash-black.png"
+                    alt="Mülleimer"><span class="nav-text">Papierkorb</span></a>
+        </nav>
+        <nav id="nav-scroll-menu" class="nav-scroll-menu hide-nav-scroll-menu">
+            <img onclick="hideNavMenu()" class="scroll-menu-button" src="img/menu.png" alt="Menü">
+            <a class="bg-secondary-nav" href="index.html"><img class="nav-img" src="img/pencil-grey.png"
+                    alt="Stift"><span>Notizen</span></a>
+            <a class="bg-main-nav" href="trash.html"><img class="nav-img" src="img/trash-black.png"
+                    alt="Mülleimer"><span>Papierkorb</span></a>
+        </nav>
+        <main>
+            <div class="deleted-notes" id="deleted-notes"></div>
+            <div id="bg-no-deleted-note" class="bg-no-note">
+                <img src="img/trash-big.png" alt="Glühbirne">
+                <span>Hier werden gelöschte Notizen abgelegt</span>
+            </div>
+            <div id="delete-overlay"></div>
+        </main>
+    </div>
+</body>
+
+</html>
